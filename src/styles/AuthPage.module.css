@@ -1,0 +1,88 @@
+.authBox {
+  width: min(520px, 100%);
+  margin: 0 auto;
+  padding: 28px 24px;
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.authBox h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.modeToggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.modeToggle button {
+  flex: 1;
+  border: 1px solid var(--border-light);
+  background: var(--bg-page);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.modeToggle button.active {
+  border-color: var(--green-main);
+  background: var(--green-bg);
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.error {
+  padding: 12px 14px;
+  background: var(--red-pale);
+  border: 1px solid #efaaaa;
+  color: var(--red-main);
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 520px) {
+  .authBox {
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+
+  .authBox h1 {
+    font-size: 26px;
+  }
+
+  .modeToggle {
+    gap: 8px;
+  }
+
+  .modeToggle button,
+  .field input {
+    min-height: 46px;
+  }
+}

@@ -1,0 +1,251 @@
+.typingContainer {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 30px;
+  background: #0f1316;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.title {
+  font-size: 34px;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.subtitle {
+  color: #9da8b8;
+  margin-bottom: 20px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.closeButton {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: #e5eef6;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+}
+
+.optionsRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.optionButton {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #d5dfe9;
+  background: rgba(255,255,255,0.02);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.active {
+  background: rgba(124,252,0,0.16);
+  border-color: rgba(124,252,0,0.28);
+  color: #ffffff;
+}
+
+.textPreview {
+  padding: 24px;
+  border-radius: 22px;
+  background: #151b21;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 20px;
+  min-height: 140px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  line-height: 1.75;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
+
+.correctChar { color: #7cfc00; }
+.incorrectChar { color: #ff6b6b; background: rgba(255,107,107,0.12); }
+.activeChar { text-decoration: underline; color: #ffffff; }
+.pendingChar { color: #5b6670; }
+
+.input {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 18px;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: vertical;
+  margin-bottom: 18px;
+  background: #11161c;
+  color: #f7f7f7;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.statLabel {
+  color: #8f9daa;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.statsRow strong {
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.error {
+  color: #ff8f8f;
+  background: rgba(255,111,111,0.14);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .typingContainer {
+    width: 100%;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .title {
+    font-size: 27px;
+  }
+
+  .closeButton {
+    align-self: flex-start;
+  }
+
+  .optionsRow {
+    gap: 8px;
+  }
+
+  .optionButton {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .actions,
+  .actions .btn-primary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .typingContainer {
+    padding: 14px;
+  }
+
+  .textPreview {
+    padding: 14px;
+    font-size: 15px;
+    min-height: 110px;
+  }
+
+  .input {
+    min-height: 118px;
+    font-size: 15px;
+  }
+
+  .optionButton {
+    flex-basis: 100%;
+  }
+}
+
+.btn-primary {
+  width: auto;
+  padding: 14px 22px;
+  background: #7cfc00;
+  color: #09120d;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background: #9dff5c;
+}
+
+.textPreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  line-height: 1.55;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+  margin-bottom: 18px;
+  min-height: 120px;
+}
+
+.correctChar { color: #2b7a0b; }
+.incorrectChar { color: #c62828; background: rgba(242, 138, 130, 0.25); }
+.activeChar { text-decoration: underline; color: var(--text-main); }
+.pendingChar { color: var(--text-light); }
+
+.input {
+  width: 100%;
+  min-height: 140px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: vertical;
+  margin-bottom: 18px;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.statLabel {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.error {
+  color: var(--red-main);
+  background: var(--red-pale);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}

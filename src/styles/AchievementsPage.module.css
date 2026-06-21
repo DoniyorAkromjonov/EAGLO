@@ -1,0 +1,163 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 24px 0 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.headerImage {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text-main);
+}
+
+.sub {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.achCard {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: transform 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.achCard:hover:not(.lockedAch) {
+  transform: translateY(-2px);
+}
+
+.lockedAch {
+  opacity: 0.38;
+  filter: grayscale(0.7);
+}
+
+.achIcon {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+
+  /* Убираем фон */
+  background: transparent;
+
+  /* Убираем скругление */
+  border-radius: 0;
+
+  /* Чтоб PNG нормально отображался */
+  overflow: visible;
+}
+
+.achImage {
+  width: 100%;
+  height: 100%;
+
+  /* Не обрезает PNG */
+  object-fit: contain;
+
+  display: block;
+
+  /* Прозрачность */
+  background: transparent;
+
+  /* Улучшает рендер */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.achName {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.achDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.unlockedBadge {
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  background: var(--green-pale);
+  color: var(--green-main);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 0 16px;
+  }
+
+  .headerImage {
+    width: 112px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achCard {
+    padding: 16px;
+  }
+
+  .achIcon {
+    width: 118px;
+    height: 118px;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    gap: 10px;
+  }
+
+  .achCard {
+    display: grid;
+    grid-template-columns: 82px 1fr;
+    align-items: center;
+    text-align: left;
+    column-gap: 14px;
+  }
+
+  .achIcon {
+    grid-row: span 3;
+    width: 82px;
+    height: 82px;
+    margin-bottom: 0;
+  }
+
+  .unlockedBadge {
+    justify-self: start;
+  }
+}

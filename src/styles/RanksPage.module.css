@@ -1,0 +1,164 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 0 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.headerImage {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text-main);
+}
+
+.currentBadge {
+  font-size: 15px;
+  font-weight: 800;
+  padding: 8px 20px;
+  border-radius: 30px;
+}
+
+.nextHint {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* List */
+.rankList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rankItem {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.active {
+  border-color: var(--green-light);
+}
+
+.locked {
+  opacity: 0.4;
+}
+
+.rankLogoWrapper {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rankLogo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rankLogoSmall {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.rankInfo { flex: 1; }
+
+.rankName {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.rankDesc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.rankRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.rankXp {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.youBadge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 0 16px;
+  }
+
+  .headerImage {
+    width: 112px;
+  }
+
+  .rankItem {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .rankLogoWrapper {
+    width: 78px;
+    height: 78px;
+  }
+
+  .rankRight {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 430px) {
+  .rankItem {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .rankLogoWrapper {
+    width: 64px;
+    height: 64px;
+    grid-row: span 2;
+  }
+
+  .rankRight {
+    grid-column: 2;
+  }
+
+  .rankName,
+  .rankDesc {
+    overflow-wrap: anywhere;
+  }
+}

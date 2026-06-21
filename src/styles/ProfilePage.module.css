@@ -1,0 +1,252 @@
+.profileContainer {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.avatar {
+  position: relative;
+  font-size: 60px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-bg);
+  border-radius: 50%;
+  border: 3px solid var(--green-light);
+  overflow: visible;
+}
+
+.avatarImage {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatarFrame {
+  position: absolute;
+  inset: -9px;
+  width: calc(100% + 18px);
+  height: calc(100% + 18px);
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.nameSection {
+  flex: 1;
+}
+
+.nameDisplay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.userName {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.editBtn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.editBtn:hover {
+  background: var(--bg-page);
+}
+
+.editName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nameInput {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.avatarForm {
+  margin-bottom: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.avatarForm label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.avatarInput {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.profileActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.saveAvatarBtn,
+.logoutBtn {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-weight: 700;
+}
+
+.saveAvatarBtn {
+  background: var(--green-mid);
+  color: white;
+}
+
+.logoutBtn {
+  background: var(--red-pale);
+  color: var(--red-main);
+}
+
+.saveBtn, .cancelBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.saveBtn:hover {
+  background: var(--green-bg);
+  color: var(--green-dark);
+}
+
+.cancelBtn:hover {
+  background: var(--red-pale);
+  color: var(--red-main);
+}
+
+.rankTitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 600;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.statCard {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 640px) {
+  .profileContainer {
+    width: 100%;
+    max-width: 520px;
+    padding: 0;
+  }
+
+  .profileHeader {
+    padding: 16px;
+    margin-bottom: 22px;
+  }
+
+  .userName {
+    font-size: 21px;
+    overflow-wrap: anywhere;
+  }
+
+  .editName {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .nameInput {
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .profileActions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .profileHeader {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nameDisplay {
+    justify-content: center;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statCard {
+    padding: 14px;
+  }
+}
